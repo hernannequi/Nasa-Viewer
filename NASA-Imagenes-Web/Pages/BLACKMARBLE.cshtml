@@ -1,0 +1,29 @@
+﻿@page
+@model NASAViewer.Pages.BLACKMARBLEModel
+@{
+    ViewData["Title"] = "Black Marble (Luces Nocturnas)";
+}
+
+<h2 class="text-center">Luces Nocturnas - NOAA-20 / VIIRS Black Marble</h2>
+
+<form method="get" class="text-center my-4">
+    <label for="date">Seleccioná una fecha:</label>
+    <input type="date" id="date" name="date" value="@Model.Date" class="form-control d-inline w-auto mx-2" />
+    <button type="submit" class="btn btn-primary">Ver</button>
+</form>
+
+<div id="map" style="width: 100%; height: 600px;"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<script>
+    const map = L.map('map').setView([20, 0], 2);
+
+    L.tileLayer('@Model.TileUrlTemplate', {
+        tileSize: 256,
+        maxZoom: 8,
+        attribution: 'Imágenes © NASA GIBS',
+        subdomains: ['a', 'b', 'c']
+    }).addTo(map);
+</script>

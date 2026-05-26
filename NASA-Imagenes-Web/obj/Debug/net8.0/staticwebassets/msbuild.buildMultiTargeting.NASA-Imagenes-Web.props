@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\NASA-Imagenes-Web.props" />
+</Project>

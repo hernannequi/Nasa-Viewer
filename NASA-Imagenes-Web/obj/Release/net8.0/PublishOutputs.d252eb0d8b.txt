@@ -1,0 +1,7 @@
+C:\Users\Hernan\Documents\Nequidev\Git\NASA-Imagenes-Web\NASA-Imagenes-Web\obj\Release\net8.0\PubTmp\Out\NASAViewer.exe
+C:\Users\Hernan\Documents\Nequidev\Git\NASA-Imagenes-Web\NASA-Imagenes-Web\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\Hernan\Documents\Nequidev\Git\NASA-Imagenes-Web\NASA-Imagenes-Web\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\Hernan\Documents\Nequidev\Git\NASA-Imagenes-Web\NASA-Imagenes-Web\obj\Release\net8.0\PubTmp\Out\NASAViewer.dll
+C:\Users\Hernan\Documents\Nequidev\Git\NASA-Imagenes-Web\NASA-Imagenes-Web\obj\Release\net8.0\PubTmp\Out\NASAViewer.deps.json
+C:\Users\Hernan\Documents\Nequidev\Git\NASA-Imagenes-Web\NASA-Imagenes-Web\obj\Release\net8.0\PubTmp\Out\NASAViewer.runtimeconfig.json
+C:\Users\Hernan\Documents\Nequidev\Git\NASA-Imagenes-Web\NASA-Imagenes-Web\obj\Release\net8.0\PubTmp\Out\NASAViewer.pdb

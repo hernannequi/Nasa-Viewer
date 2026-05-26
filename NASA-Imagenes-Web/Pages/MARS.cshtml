@@ -1,0 +1,42 @@
+﻿@page
+@model NASAViewer.Pages.MARSModel
+@{
+    ViewData["Title"] = "Imagenes de Marte del Rover Curiosity - MARS";
+}
+
+<h2 class="text-center">Fotos del Rover Curiosity (Sol 1000)</h2>
+
+<form method="get" class="text-center my-4">
+    <label for="sol">Elegí el día marciano (Sol):</label>
+    <input type="number" id="sol" name="sol" min="0" value="@Model.Sol" class="form-control d-inline w-auto mx-2" />
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+@if (Model.Photos != null && Model.Photos.Any())
+{
+    <div id="marsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @for (int i = 0; i < Model.Photos.Count; i++)
+            {
+                Models.Photo photo = Model.Photos[i];
+                <div class="carousel-item @(i == 0 ? "active" : "")">
+                    <img src="@photo.img_src" class="d-block w-100" alt="@photo.camera.full_name" />
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>@photo.camera.full_name</h5>
+                        <p>Fecha en la Tierra: @photo.earth_date</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#marsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#marsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+}
+else
+{
+    <p>No se encontraron imágenes disponibles.</p>
+}

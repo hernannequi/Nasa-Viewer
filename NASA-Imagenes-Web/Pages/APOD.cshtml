@@ -1,0 +1,10 @@
+﻿@page
+@model NASAViewer.Pages.APODModel
+@{
+    ViewData["Title"] = "Imagen del Dia - APOD";
+
+}
+
+<h2>@Model.Apod.title</h2>
+<img src="@Model.Apod.url" alt="NASA Image" style="max-width:100%;" />
+<p>@Model.Apod.explanation</p>

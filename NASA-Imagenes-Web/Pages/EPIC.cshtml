@@ -1,0 +1,41 @@
+﻿@page
+@model EPICModel
+
+@{
+    ViewData["Title"] = "Imagenes EPIC (Tierra)";
+}
+
+<h2 class="text-center">Galeria de Imagenes EPIC (Tierra)</h2>
+
+@if (Model.EpicImages != null && Model.EpicImages.Any())
+{
+    <div id="epicCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @for (int i = 0; i < Model.EpicImages.Count; i++)
+            {
+                Models.EpicImageResponse image = Model.EpicImages[i];
+                DateTime parsedDate = DateTime.Parse(image.Date);
+                string date = parsedDate.ToString("yyyy/MM/dd");
+                string imageUrl = $"https://api.nasa.gov/EPIC/archive/natural/{date}/png/{image.Image}.png?api_key=T3IDda6E6wpf2TxTc1V0as9uazaRiVUMJMHFNJQu";
+
+                <div class="carousel-item @(i == 0 ? "active" : "")">
+                    <img src="@imageUrl" class="d-block w-100" alt="@image.Caption" />
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>@image.Caption</h5>
+                        <p>@image.Date</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#epicCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#epicCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+}
+else
+{
+    <p>No hay imágenes disponibles en este momento.</p>
+}

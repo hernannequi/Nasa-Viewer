@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a NASA Viewer</h1>
+    
+    <a class="btn btn-primary m-2" asp-page="/APOD" target="_blank" >Imagen Astronomica del Dia</a>
+    <a class="btn btn-secondary m-2" asp-page="/MARS" target="_blank" >Fotos de Marte</a>
+    <a class="btn btn-success m-2" asp-page="/EPIC" target="_blank">Imagenes EPIC (Tierra)</a>
+    <a class="btn btn-dark m-2" href="/BlackMarble" target="_blank">Black Marble (Luces Nocturnas)</a>
+</div>
