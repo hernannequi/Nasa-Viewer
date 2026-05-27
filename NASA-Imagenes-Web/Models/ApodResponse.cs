@@ -2,13 +2,13 @@
 {
     public class ApodResponse
     {
-        public DateTime date { get; set; }
-        public string explanation { get; set; }
-        public string hdurl { get; set; }
-        public string media_type { get; set; }
-        public string service_version { get; set; }
-        public string title { get; set; }
-        public string url { get; set; }
+        public DateTime Date { get; set; }
+        public string Explanation { get; set; }
+        public string Hdurl { get; set; }
+        public string Media_type { get; set; }
+        public string Service_version { get; set; }
+        public string Title { get; set; }
+        public string Url { get; set; }
     }
 
 }

@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
@@ -18,12 +19,27 @@ namespace NASAViewer.Services
             _apiKey = configuration["NasaApi:ApiKey"];
         }
 
-        public async Task<ApodResponse> GetApodAsync()
+        public async Task<ApodResponse> GetApodAsync(DateTime? date = null)
         {
-            HttpResponseMessage response = await _httpClient.GetAsync($"https://api.nasa.gov/planetary/apod?api_key={_apiKey}");
+            string url = $"https://api.nasa.gov/planetary/apod?api_key={_apiKey}";
+
+            if (date.HasValue)
+            {
+                url += $"&date={date.Value:yyyy-MM-dd}";
+            }
+
+            HttpResponseMessage response = await _httpClient.GetAsync(url);
+
             response.EnsureSuccessStatusCode();
+
             string json = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<ApodResponse>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            return JsonSerializer.Deserialize<ApodResponse>(
+                json,
+                new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
         }
 
         public async Task<List<EpicImageResponse>> GetEpicImagesAsync()
@@ -38,34 +54,34 @@ namespace NASAViewer.Services
             });
         }
 
-        public async Task<List<Photo>> GetMarsPhotosBySolAsync(int sol)
-        {
-            try
-            {
-                string url = $"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={_apiKey}";
-                HttpResponseMessage response = await _httpClient.GetAsync(url);
+        //public async Task<List<Photo>> GetMarsPhotosBySolAsync(int sol)
+        //{
+        //    try
+        //    {
+        //        string url = $"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={_apiKey}";
+        //        HttpResponseMessage response = await _httpClient.GetAsync(url);
 
-                if (!response.IsSuccessStatusCode)
-                {
-                    return new List<Photo>();
-                }
+        //        if (!response.IsSuccessStatusCode)
+        //        {
+        //            return new List<Photo>();
+        //        }
 
-                string json = await response.Content.ReadAsStringAsync();
+        //        string json = await response.Content.ReadAsStringAsync();
 
-                MarsPhotosResponse result =
-                    JsonSerializer.Deserialize<MarsPhotosResponse>
-                    (json, new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
+        //        MarsPhotosResponse result =
+        //            JsonSerializer.Deserialize<MarsPhotosResponse>
+        //            (json, new JsonSerializerOptions
+        //            {
+        //                PropertyNameCaseInsensitive = true
+        //            });
 
-                return result?.photos ?? new List<Photo>();
-            }
-            catch (Exception ex)
-            {
-                return new List<Photo>();
-            }
-        }
+        //        return result?.photos ?? new List<Photo>();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new List<Photo>();
+        //    }
+        //}
 
         public async Task<List<Item>> SearchImagesAsync(string query)
         {
@@ -91,9 +107,9 @@ namespace NASAViewer.Services
             return result?.Collection?.Items ?? new List<Item>();
         }
 
-    public async Task<List<PerseveranceImage>> GetPerseveranceImagesAsync(
-    int page = 1,
-    int num = 6)
+        public async Task<List<PerseveranceImage>> GetPerseveranceImagesAsync(
+        int page = 1,
+        int num = 6)
         {
             string url =
                 $"https://mars.nasa.gov/rss/api/" +
@@ -122,5 +138,30 @@ namespace NASAViewer.Services
 
             return result?.Images ?? new List<PerseveranceImage>();
         }
+
+        public async Task<ApodResponse> GetRandomApodAsync()
+        {
+            string url =
+                $"https://api.nasa.gov/planetary/apod?api_key={_apiKey}&count=1";
+
+            HttpResponseMessage response =
+                await _httpClient.GetAsync(url);
+
+            response.EnsureSuccessStatusCode();
+
+            string json =
+                await response.Content.ReadAsStringAsync();
+
+            List<ApodResponse> result =
+                JsonSerializer.Deserialize<List<ApodResponse>>(
+                    json,
+                    new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+            return result?.FirstOrDefault();
+        }
+
     }
 }

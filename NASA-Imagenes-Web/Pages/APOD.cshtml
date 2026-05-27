@@ -4,63 +4,127 @@
     ViewData["Title"] = "Imagen del Dia - APOD";
 
 }
-@* 
+
 <div class="container py-5">
 
-    <div class="row justify-content-center">
+@*     <form method="get" class="mb-4 text-center">
 
-        <div class="col-12 col-lg-6">
-            @if (Model.Apod.media_type == "image")
-            {
-                <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+        <label class="form-label fw-bold">
+            📅 Seleccionar fecha
+        </label>
 
-                    <img src="@Model.Apod.url"
-                         alt="NASA Image"
-                         class="img-fluid"
-                         style="max-height:600px; object-fit:cover;" />
+        <div class="d-flex justify-content-center gap-2">
 
-                    <div class="card-body p-4">
+            <input type="date"
+                   name="date"
+                   value="@Model.Date?.ToString("yyyy-MM-dd")"
+                   class="form-control w-auto" />
 
-                        <h2 class="card-title mb-4 text-center">
-                            🌌 @Model.Apod.title
-                        </h2>
+            <button type="submit"
+                    class="btn btn-primary">
 
-                        <p class="card-text text-secondary"
-                           style="text-align:justify; line-height:1.8;">
+                Buscar
 
-                            @Model.Apod.explanation
+            </button>
 
-                        </p>
-
-                    </div>
-
-                </div>
-            }
-            else if (Model.Apod.media_type == "video")
-            {
-                <div class="ratio ratio-16x9">
-                    <iframe src="@Model.Apod.url"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-            }
         </div>
 
-    </div>
+    </form>
+ *@
+    <form method="get" class="mb-5 text-center">
 
-</div> *@
+        <label class="form-label fw-bold fs-5">
+            📅 Explorar APOD históricas
+        </label>
 
-<div class="container py-5">
+        <div class="d-flex
+                flex-column
+                flex-md-row
+                justify-content-center
+                align-items-center
+                gap-3">
+
+            @if (Model.Date > Model.MinDate)
+            {
+                <a class="btn btn-outline-primary"
+                   href="/APOD?date=@Model.Date?.AddDays(-1).ToString("yyyy-MM-dd")">
+
+                    ◀ Yesterday
+
+                </a>
+            }
+            else
+            {
+                <button class="btn btn-outline-secondary"
+                        disabled>
+
+                    ◀ Yesterday
+
+                </button>
+            }
+
+            <!-- Date Picker -->
+            <input type="date"
+                   name="date"
+                   value="@Model.Date?.ToString("yyyy-MM-dd")"
+                   min="1995-06-16"
+                   max="@DateTime.Today.ToString("yyyy-MM-dd")"
+                   class="form-control w-auto" />
+
+            <!-- Buscar -->
+            <button type="submit"
+                    class="btn btn-primary">
+
+                Buscar
+
+            </button>
+
+            <!-- Today -->
+            <a class="btn btn-outline-secondary"
+               href="/APOD">
+
+                Today
+
+            </a>
+
+            @if (Model.Date < Model.MaxDate)
+            {
+                <a class="btn btn-outline-primary"
+                   href="/APOD?date=@Model.Date?.AddDays(1).ToString("yyyy-MM-dd")">
+
+                    Tomorrow ▶
+
+                </a>
+            }
+            else
+            {
+                <button class="btn btn-outline-secondary"
+                        disabled>
+
+                    Tomorrow ▶
+
+                </button>
+            }
+
+            <a class="btn btn-outline-danger"
+               href="/APOD?random=true">
+
+                🎲 Random APOD
+
+            </a>
+        </div>
+
+    </form>
 
     <div class="row justify-content-center">
 
         <div class="col-12 col-lg-6">
 
-            @if (Model.Apod.media_type == "image")
+            @if (Model.Apod.Media_type == "image")
             {
                 <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
 
-                    <img src="@Model.Apod.url"
+                    <img src="@Model.Apod.Url"
                          alt="NASA Image"
                          class="img-fluid"
                          style="max-height:600px;
@@ -70,14 +134,14 @@
                     <div class="card-body p-4">
 
                         <h2 class="card-title mb-4 text-center">
-                            🌌 @Model.Apod.title
+                            🌌 @Model.Apod.Title
                         </h2>
 
                         <p class="card-text text-secondary"
                            style="text-align:justify;
                                   line-height:1.8;">
 
-                            @Model.Apod.explanation
+                            @Model.Apod.Explanation
 
                         </p>
 
@@ -85,7 +149,7 @@
 
                     <div class="card-footer bg-white border-0 p-4">
 
-                        <a href="@Model.Apod.hdurl"
+                        <a href="@Model.Apod.Hdurl"
                            target="_blank"
                            class="btn btn-danger w-100">
 
@@ -97,13 +161,13 @@
 
                 </div>
             }
-            else if (Model.Apod.media_type == "video")
+            else if (Model.Apod.Media_type == "video")
             {
                 <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
 
                     <div class="ratio ratio-16x9">
 
-                        <iframe src="@Model.Apod.url"
+                        <iframe src="@Model.Apod.Url"
                                 allowfullscreen>
                         </iframe>
 
@@ -112,14 +176,14 @@
                     <div class="card-body p-4">
 
                         <h2 class="card-title mb-4 text-center">
-                            🎥 @Model.Apod.title
+                            🎥 @Model.Apod.Title
                         </h2>
 
                         <p class="card-text text-secondary"
                            style="text-align:justify;
                                   line-height:1.8;">
 
-                            @Model.Apod.explanation
+                            @Model.Apod.Explanation
 
                         </p>
 
