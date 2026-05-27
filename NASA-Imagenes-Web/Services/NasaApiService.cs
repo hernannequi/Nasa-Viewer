@@ -92,8 +92,8 @@ namespace NASAViewer.Services
         }
 
     public async Task<List<PerseveranceImage>> GetPerseveranceImagesAsync(
-    int page = 0,
-    int num = 20)
+    int page = 1,
+    int num = 6)
         {
             string url =
                 $"https://mars.nasa.gov/rss/api/" +

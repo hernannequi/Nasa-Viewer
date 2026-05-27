@@ -4,7 +4,132 @@
     ViewData["Title"] = "Imagen del Dia - APOD";
 
 }
+@* 
+<div class="container py-5">
 
-<h2>@Model.Apod.title</h2>
-<img src="@Model.Apod.url" alt="NASA Image" style="max-width:100%;" />
-<p>@Model.Apod.explanation</p>
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-lg-6">
+            @if (Model.Apod.media_type == "image")
+            {
+                <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+
+                    <img src="@Model.Apod.url"
+                         alt="NASA Image"
+                         class="img-fluid"
+                         style="max-height:600px; object-fit:cover;" />
+
+                    <div class="card-body p-4">
+
+                        <h2 class="card-title mb-4 text-center">
+                            🌌 @Model.Apod.title
+                        </h2>
+
+                        <p class="card-text text-secondary"
+                           style="text-align:justify; line-height:1.8;">
+
+                            @Model.Apod.explanation
+
+                        </p>
+
+                    </div>
+
+                </div>
+            }
+            else if (Model.Apod.media_type == "video")
+            {
+                <div class="ratio ratio-16x9">
+                    <iframe src="@Model.Apod.url"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            }
+        </div>
+
+    </div>
+
+</div> *@
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-lg-6">
+
+            @if (Model.Apod.media_type == "image")
+            {
+                <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+
+                    <img src="@Model.Apod.url"
+                         alt="NASA Image"
+                         class="img-fluid"
+                         style="max-height:600px;
+                                width:100%;
+                                object-fit:cover;" />
+
+                    <div class="card-body p-4">
+
+                        <h2 class="card-title mb-4 text-center">
+                            🌌 @Model.Apod.title
+                        </h2>
+
+                        <p class="card-text text-secondary"
+                           style="text-align:justify;
+                                  line-height:1.8;">
+
+                            @Model.Apod.explanation
+
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0 p-4">
+
+                        <a href="@Model.Apod.hdurl"
+                           target="_blank"
+                           class="btn btn-danger w-100">
+
+                            🔍 Ver Imagen Completa HD
+
+                        </a>
+
+                    </div>
+
+                </div>
+            }
+            else if (Model.Apod.media_type == "video")
+            {
+                <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+
+                    <div class="ratio ratio-16x9">
+
+                        <iframe src="@Model.Apod.url"
+                                allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                    <div class="card-body p-4">
+
+                        <h2 class="card-title mb-4 text-center">
+                            🎥 @Model.Apod.title
+                        </h2>
+
+                        <p class="card-text text-secondary"
+                           style="text-align:justify;
+                                  line-height:1.8;">
+
+                            @Model.Apod.explanation
+
+                        </p>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>

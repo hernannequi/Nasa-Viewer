@@ -13,7 +13,7 @@ namespace NASAViewer.Pages
         public List<PerseveranceImage> Images { get; set; } = new();
 
         [BindProperty(SupportsGet = true)]
-        public int PageNumber { get; set; } = 0;
+        public int PageNumber { get; set; } = 1;
 
         public PerseveranceModel(
             NasaApiService nasaApiService)

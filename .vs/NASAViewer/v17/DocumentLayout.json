@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\pages\\apod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\pages\\apod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\services\\nasaapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\services\\nasaapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\models\\apodresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\models\\apodresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\pages\\epic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\pages\\epic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\pages\\perseverance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -13,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\pages\\perseverance.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\pages\\perseverance.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\services\\nasaapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\services\\nasaapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\models\\perseveranceresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|c:\\users\\hernan\\documents\\git\\nasa-viewer\\nasa-imagenes-web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F507083E-1EAF-41C9-87F4-D14EC5C43194}|NASA-Imagenes-Web\\NASAViewer.csproj|solutionrelative:nasa-imagenes-web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -82,17 +94,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\Index.cshtml",
               "ToolTip": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\Index.cshtml",
               "RelativeToolTip": "NASA-Imagenes-Web\\Pages\\Index.cshtml",
-              "ViewState": "AgIAABYAAAAAAAAAAADwvygAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-13T16:51:41.597Z",
               "IsPinned": true,
@@ -100,13 +112,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "NasaApiService.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Services\\NasaApiService.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Services\\NasaApiService.cs",
               "ToolTip": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Services\\NasaApiService.cs",
               "RelativeToolTip": "NASA-Imagenes-Web\\Services\\NasaApiService.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAA3wF8AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA1wF4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-26T21:09:37.636Z",
               "IsPinned": true,
@@ -151,45 +163,84 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ApodResponse.cs",
+              "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Models\\ApodResponse.cs",
+              "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Models\\ApodResponse.cs",
+              "ToolTip": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Models\\ApodResponse.cs",
+              "RelativeToolTip": "NASA-Imagenes-Web\\Models\\ApodResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T01:46:45.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "APOD.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\APOD.cshtml",
+              "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\APOD.cshtml",
+              "ToolTip": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\APOD.cshtml",
+              "RelativeToolTip": "NASA-Imagenes-Web\\Pages\\APOD.cshtml",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAwHsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-27T01:43:08.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EPIC.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\EPIC.cshtml",
+              "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\EPIC.cshtml",
+              "ToolTip": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\EPIC.cshtml",
+              "RelativeToolTip": "NASA-Imagenes-Web\\Pages\\EPIC.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-27T01:42:49.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Perseverance.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\Perseverance.cshtml.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\Perseverance.cshtml.cs",
               "ToolTip": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\Perseverance.cshtml.cs",
               "RelativeToolTip": "NASA-Imagenes-Web\\Pages\\Perseverance.cshtml.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAmwB0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAD4vw8AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T00:57:53.33Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Perseverance.cshtml",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\Perseverance.cshtml",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\Perseverance.cshtml",
               "ToolTip": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\Perseverance.cshtml",
               "RelativeToolTip": "NASA-Imagenes-Web\\Pages\\Perseverance.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAADgvw0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-05-27T00:57:30.675Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "PerseveranceResponse.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Models\\PerseveranceResponse.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Models\\PerseveranceResponse.cs",
               "ToolTip": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Models\\PerseveranceResponse.cs",
               "RelativeToolTip": "NASA-Imagenes-Web\\Models\\PerseveranceResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAywAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T00:33:50Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Search.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\Search.cshtml.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\Search.cshtml.cs",
@@ -201,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Search.cshtml",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\Search.cshtml",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\Search.cshtml",
@@ -213,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "NasaImageSearchResponse.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Models\\NasaImageSearchResponse.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Models\\NasaImageSearchResponse.cs",
@@ -225,19 +276,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "NASA-Imagenes-Web\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-26T22:48:07.708Z"
+              "WhenOpened": "2026-05-26T22:48:07.708Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Program.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Program.cs",
@@ -249,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\appsettings.json",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\appsettings.json",
@@ -261,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "MarsPhotosResponse.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Models\\MarsPhotosResponse.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Models\\MarsPhotosResponse.cs",
@@ -273,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "MARS.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\MARS.cshtml.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\MARS.cshtml.cs",
@@ -285,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "MARS.cshtml",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\MARS.cshtml",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\MARS.cshtml",
@@ -297,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "GibsLayerModel.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Models\\GibsLayerModel.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Models\\GibsLayerModel.cs",
@@ -309,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "GibsTileService.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Services\\GibsTileService.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Services\\GibsTileService.cs",
@@ -321,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "BLACKMARBLE.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\BLACKMARBLE.cshtml.cs",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\BLACKMARBLE.cshtml.cs",
@@ -333,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "BLACKMARBLE.cshtml",
               "DocumentMoniker": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\Pages\\BLACKMARBLE.cshtml",
               "RelativeDocumentMoniker": "NASA-Imagenes-Web\\Pages\\BLACKMARBLE.cshtml",

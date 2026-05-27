@@ -1,13 +1,17 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Inicio";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Bienvenido a NASA Viewer</h1>
+    <h3 class="display-4">Bienvenido a 🌌 NASA Viewer</h3>
 
-    <a class="btn btn-primary m-2"
+    <p>
+        NASA Viewer es una aplicación web desarrollada con ASP.NET Core Razor Pages que consume múltiples APIs oficiales de NASA para explorar imágenes espaciales, galerías satelitales y mapas interactivos.
+        Tecnologías: C#, Razor Pages, Bootstrap, Leaflet.js, HttpClient y APIs REST de NASA.
+    </p>
+    <a class="btn btn-outline-primary m-2"
        asp-page="/APOD"
        target="_blank">
         Imagen Astronomica del Dia
@@ -19,27 +23,28 @@
         Fotos de Marte
     </a> *@
 
-    <a class="btn btn-success m-2"
+    <a class="btn btn-outline-success m-2"
        asp-page="/EPIC"
        target="_blank">
         Imagenes EPIC (Tierra)
     </a>
 
-    <a class="btn btn-dark m-2"
+    <a class="btn btn-outline-dark m-2"
        asp-page="/BLACKMARBLE"
        target="_blank">
         Black Marble (Luces Nocturnas)
     </a>
 
-    <a class="btn btn-danger m-2"
+    <a class="btn btn-outline-danger m-2"
        asp-page="/Search"
        target="_blank">
         Buscador de Imagenes NASA
     </a>
 
-    <a class="btn btn-danger m-2"
+    <a class="btn btn-outline-warning m-2"
        asp-page="/Perseverance"
        target="_blank">
         Perseverance RAW
     </a>
+
 </div>
