@@ -1,0 +1,77 @@
+﻿@page
+@model NASAViewer.Pages.SearchModel
+
+@{
+    ViewData["Title"] = "NASA Image Search";
+}
+
+<h2 class="text-center mb-4">
+    🔭 NASA Image Search
+</h2>
+
+<form method="get" class="text-center mb-5">
+
+    <input type="text"
+           name="query"
+           value="@Model.Query"
+           class="form-control d-inline w-50"
+           placeholder="Buscar Marte, Luna, Saturno..." />
+
+    <button type="submit"
+            class="btn btn-primary ms-2">
+        Buscar
+    </button>
+
+</form>
+
+@if (Model.Results.Any())
+{
+    <div class="row">
+
+        @foreach (var item in Model.Results.Take(20))
+        {
+            string imageUrl =
+            item.Links?.FirstOrDefault()?.Href;
+
+            string title =
+            item.Data?.FirstOrDefault()?.Title;
+
+            string description =
+            item.Data?.FirstOrDefault()?.Description;
+
+            <div class="col-md-4 mb-4">
+
+                <div class="card h-100 shadow">
+
+                    <img src="@imageUrl"
+                         class="card-img-top"
+                         style="height:300px; object-fit:cover;" />
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            @title
+                        </h5>
+
+                        <p class="card-text"
+                           style="max-height:120px; overflow:auto;">
+
+                            @description
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+        No se encontraron resultados.
+    </div>
+}

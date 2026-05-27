@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hernan\\Documents\\Nequidev\\Git\\NASA-Imagenes-Web\\NASA-Imagenes-Web\\NASAViewer.csproj": {}
+    "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\NASAViewer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hernan\\Documents\\Nequidev\\Git\\NASA-Imagenes-Web\\NASA-Imagenes-Web\\NASAViewer.csproj": {
+    "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\NASAViewer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hernan\\Documents\\Nequidev\\Git\\NASA-Imagenes-Web\\NASA-Imagenes-Web\\NASAViewer.csproj",
+        "projectUniqueName": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\NASAViewer.csproj",
         "projectName": "NASAViewer",
-        "projectPath": "C:\\Users\\Hernan\\Documents\\Nequidev\\Git\\NASA-Imagenes-Web\\NASA-Imagenes-Web\\NASAViewer.csproj",
+        "projectPath": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\NASAViewer.csproj",
         "packagesPath": "C:\\Users\\Hernan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hernan\\Documents\\Nequidev\\Git\\NASA-Imagenes-Web\\NASA-Imagenes-Web\\obj\\",
+        "outputPath": "C:\\Users\\Hernan\\Documents\\Git\\Nasa-Viewer\\NASA-Imagenes-Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

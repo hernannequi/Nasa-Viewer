@@ -66,6 +66,30 @@ namespace NASAViewer.Services
                 return new List<Photo>();
             }
         }
+
+        public async Task<List<Item>> SearchImagesAsync(string query)
+        {
+            string url =
+        $"https://images-api.nasa.gov/search?q={query}&media_type=image";
+
+            HttpResponseMessage response =
+                await _httpClient.GetAsync(url);
+
+            response.EnsureSuccessStatusCode();
+
+            string json =
+                await response.Content.ReadAsStringAsync();
+
+            NasaImageSearchResponse result =
+                JsonSerializer.Deserialize<NasaImageSearchResponse>(
+                    json,
+                    new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+            return result?.Collection?.Items ?? new List<Item>();
+        }
     }
 
 }

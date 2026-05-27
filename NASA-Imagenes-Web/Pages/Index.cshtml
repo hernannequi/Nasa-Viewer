@@ -6,9 +6,40 @@
 
 <div class="text-center">
     <h1 class="display-4">Bienvenido a NASA Viewer</h1>
-    
-    <a class="btn btn-primary m-2" asp-page="/APOD" target="_blank" >Imagen Astronomica del Dia</a>
-    <a class="btn btn-secondary m-2" asp-page="/MARS" target="_blank" >Fotos de Marte</a>
-    <a class="btn btn-success m-2" asp-page="/EPIC" target="_blank">Imagenes EPIC (Tierra)</a>
-    <a class="btn btn-dark m-2" href="/BlackMarble" target="_blank">Black Marble (Luces Nocturnas)</a>
+
+    <a class="btn btn-primary m-2"
+       asp-page="/APOD"
+       target="_blank">
+        Imagen Astronomica del Dia
+    </a>
+    @* Version de API deprecada, ya no funciona*@
+    @* <a class="btn btn-secondary m-2"
+       asp-page="/MARS"
+       target="_blank">
+        Fotos de Marte
+    </a> *@
+
+    <a class="btn btn-success m-2"
+       asp-page="/EPIC"
+       target="_blank">
+        Imagenes EPIC (Tierra)
+    </a>
+
+    <a class="btn btn-dark m-2"
+       asp-page="/BLACKMARBLE"
+       target="_blank">
+        Black Marble (Luces Nocturnas)
+    </a>
+
+    <a class="btn btn-danger m-2"
+       asp-page="/Search"
+       target="_blank">
+        Buscador de Imagenes NASA
+    </a>
+
+    <a class="btn btn-danger m-2"
+       asp-page="/PerseveranceRAW"
+       target="_blank">
+        Perseverance RAW
+    </a>
 </div>
