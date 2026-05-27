@@ -44,20 +44,20 @@ namespace NASAViewer.Services
             {
                 string url = $"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={_apiKey}";
                 HttpResponseMessage response = await _httpClient.GetAsync(url);
-                
+
                 if (!response.IsSuccessStatusCode)
                 {
                     return new List<Photo>();
                 }
 
                 string json = await response.Content.ReadAsStringAsync();
-                
-                MarsPhotosResponse result = 
+
+                MarsPhotosResponse result =
                     JsonSerializer.Deserialize<MarsPhotosResponse>
                     (json, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
 
                 return result?.photos ?? new List<Photo>();
             }
@@ -90,6 +90,37 @@ namespace NASAViewer.Services
 
             return result?.Collection?.Items ?? new List<Item>();
         }
-    }
 
+    public async Task<List<PerseveranceImage>> GetPerseveranceImagesAsync(
+    int page = 0,
+    int num = 20)
+        {
+            string url =
+                $"https://mars.nasa.gov/rss/api/" +
+                $"?feed=raw_images" +
+                $"&category=mars2020" +
+                $"&feedtype=json" +
+                $"&page={page}" +
+                $"&num={num}" +
+                $"&order=sol desc";
+
+            HttpResponseMessage response =
+                await _httpClient.GetAsync(url);
+
+            response.EnsureSuccessStatusCode();
+
+            string json =
+                await response.Content.ReadAsStringAsync();
+
+            PerseveranceResponse result =
+                JsonSerializer.Deserialize<PerseveranceResponse>(
+                    json,
+                    new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+            return result?.Images ?? new List<PerseveranceImage>();
+        }
+    }
 }

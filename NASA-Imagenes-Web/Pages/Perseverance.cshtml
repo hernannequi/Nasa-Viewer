@@ -1,0 +1,88 @@
+﻿@page
+@model NASAViewer.Pages.PerseveranceModel
+
+@{
+    ViewData["Title"] = "Perseverance RAW Images";
+}
+
+<h2 class="text-center mb-4">
+    🚀 Perseverance RAW Images
+</h2>
+
+<div class="text-center mb-4">
+
+    <a class="btn btn-primary"
+       href="/Perseverance?PageNumber=@(Model.PageNumber - 1)">
+
+        ⬅️ Anterior
+
+    </a>
+
+    <span class="mx-3">
+        Página @Model.PageNumber
+    </span>
+
+    <a class="btn btn-primary"
+       href="/Perseverance?PageNumber=@(Model.PageNumber + 1)">
+
+        Siguiente ➡️
+
+    </a>
+
+</div>
+
+@if (Model.Images.Any())
+{
+    <div class="row">
+
+        @foreach (var image in Model.Images)
+        {
+            <div class="col-md-4 mb-4">
+
+                <div class="card shadow h-100">
+
+                    <img src="@image.ImageFiles.Medium"
+                         class="card-img-top"
+                         style="height:300px; object-fit:cover;" />
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Sol @image.Sol
+                        </h5>
+
+                        <p class="card-text">
+                            @image.Title
+                        </p>
+
+                        <small class="text-muted">
+                            @image.DateTaken
+                        </small>
+
+                    </div>
+
+                    <div class="card-footer">
+
+                        <a href="@image.ImageFiles.FullRes"
+                           target="_blank"
+                           class="btn btn-danger w-100">
+
+                            🔍 Ver Full Resolution
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+}
+else
+{
+    <div class="alert alert-warning text-center">
+        No se encontraron imágenes.
+    </div>
+}
