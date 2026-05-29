@@ -20,3 +20,46 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+body {
+    background: radial-gradient(circle at top/*, #0b1d3a, #000814*/);
+}
+
+.epic-image {
+    height: 75vh;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.epic-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient( transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+.carousel-inner {
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.carousel-item {
+    transition: transform 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+
+    .epic-image {
+        height: 50vh;
+    }
+
+    .epic-overlay {
+        padding: 1rem;
+    }
+
+        .epic-overlay h3 {
+            font-size: 1.1rem;
+        }
+}

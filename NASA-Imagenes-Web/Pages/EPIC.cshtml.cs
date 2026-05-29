@@ -20,7 +20,9 @@ namespace NASAViewer.Pages
 
         public async Task OnGetAsync()
         {
-            EpicImages = await _nasaApiService.GetEpicImagesAsync();
+            EpicImages = (await _nasaApiService.GetEpicImagesAsync())
+                .Take(10)
+                .ToList();
         }
     }
 

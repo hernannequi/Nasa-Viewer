@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NASAViewer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fabf5f0eb900ee2f13879f9850efa3d8dfd52529")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fca6e93caba77ce05008cf667b0c13a17dd4ff90")]
 [assembly: System.Reflection.AssemblyProductAttribute("NASAViewer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NASAViewer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

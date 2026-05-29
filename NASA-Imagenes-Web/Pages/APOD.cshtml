@@ -5,6 +5,18 @@
 
 }
 
+@if (Model.Apod == null)
+{
+    <div class="alert alert-danger text-center">
+
+        🚨 NASA API limit reached.
+        Please try again later.
+
+    </div>
+
+    return;
+}
+
 <div class="container py-5">
 
 @*     <form method="get" class="mb-4 text-center">

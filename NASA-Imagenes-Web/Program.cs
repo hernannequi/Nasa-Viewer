@@ -5,8 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-//inyeccion de NasaApiService
+// Inyeccion de Cache
+builder.Services.AddMemoryCache();
+
+// Inyeccion de NasaApiService
 builder.Services.AddHttpClient<NasaApiService>();
+
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using NASAViewer.Models;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace NASAViewer.Services
 {
@@ -12,15 +13,25 @@ namespace NASAViewer.Services
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
-
-        public NasaApiService(HttpClient httpClient, IConfiguration configuration)
+        private readonly IMemoryCache _cache;
+        public NasaApiService(HttpClient httpClient,
+                            IConfiguration configuration,
+                            IMemoryCache cache)
         {
             _httpClient = httpClient;
             _apiKey = configuration["NasaApi:ApiKey"];
+            _cache = cache;
         }
 
         public async Task<ApodResponse> GetApodAsync(DateTime? date = null)
         {
+            string cacheKey = $"apod_{date?.ToString("yyyyMMdd") ?? "today"}";
+
+            if (_cache.TryGetValue(cacheKey, out ApodResponse cacheApod))
+            {
+                return cacheApod;
+            }
+
             string url = $"https://api.nasa.gov/planetary/apod?api_key={_apiKey}";
 
             if (date.HasValue)
@@ -28,30 +39,60 @@ namespace NASAViewer.Services
                 url += $"&date={date.Value:yyyy-MM-dd}";
             }
 
-            HttpResponseMessage response = await _httpClient.GetAsync(url);
+            string? json = await SafeGetAsync(url);
 
-            response.EnsureSuccessStatusCode();
-
-            string json = await response.Content.ReadAsStringAsync();
-
-            return JsonSerializer.Deserialize<ApodResponse>(
+            if (string.IsNullOrWhiteSpace(json))
+            {
+                return null;
+            }
+            ApodResponse? result = JsonSerializer.Deserialize<ApodResponse>(
                 json,
                 new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
+
+            if (result != null)
+            {
+                _cache.Set(
+                    cacheKey,
+                    result,
+                    TimeSpan.FromHours(1));
+            }
+
+            return result;
         }
 
         public async Task<List<EpicImageResponse>> GetEpicImagesAsync()
         {
-            HttpResponseMessage response = await _httpClient.GetAsync($"https://api.nasa.gov/EPIC/api/natural?api_key={_apiKey}");
-            response.EnsureSuccessStatusCode();
-            string json = await response.Content.ReadAsStringAsync();
+            const string cacheKey = "epic_images";
 
-            return JsonSerializer.Deserialize<List<EpicImageResponse>>(json, new JsonSerializerOptions
+            if (_cache.TryGetValue(cacheKey, out List<EpicImageResponse> cache))
+            {
+                return cache;
+            }
+
+            string? json = await SafeGetAsync($"https://api.nasa.gov/EPIC/api/natural?api_key={_apiKey}");
+
+            if (string.IsNullOrWhiteSpace(json))
+            {
+                return new List<EpicImageResponse>();
+            }
+
+            List<EpicImageResponse>? result = JsonSerializer.Deserialize<List<EpicImageResponse>>(json, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });
+
+            if (result != null)
+            {
+                _cache.Set(
+                    cacheKey,
+                    result,
+                    TimeSpan.FromMinutes(30));
+            }
+
+            return result;
         }
 
         //public async Task<List<Photo>> GetMarsPhotosBySolAsync(int sol)
@@ -141,18 +182,24 @@ namespace NASAViewer.Services
 
         public async Task<ApodResponse> GetRandomApodAsync()
         {
-            string url =
-                $"https://api.nasa.gov/planetary/apod?api_key={_apiKey}&count=1";
+            const string cacheKey = "random_apod";
 
-            HttpResponseMessage response =
-                await _httpClient.GetAsync(url);
+            if (_cache.TryGetValue(cacheKey, out ApodResponse cache))
+            {
 
-            response.EnsureSuccessStatusCode();
+                return cache;
+            }
 
-            string json =
-                await response.Content.ReadAsStringAsync();
+            string url = $"https://api.nasa.gov/planetary/apod?api_key={_apiKey}&count=1";
 
-            List<ApodResponse> result =
+            string? json = await SafeGetAsync(url);
+
+            if (string.IsNullOrWhiteSpace(json))
+            {
+                return null;
+            }
+
+            List<ApodResponse>? result =
                 JsonSerializer.Deserialize<List<ApodResponse>>(
                     json,
                     new JsonSerializerOptions
@@ -160,7 +207,43 @@ namespace NASAViewer.Services
                         PropertyNameCaseInsensitive = true
                     });
 
-            return result?.FirstOrDefault();
+            ApodResponse? apod = result?.FirstOrDefault();
+
+            if (apod != null)
+            {
+                _cache.Set(
+                    cacheKey,
+                    apod,
+                    TimeSpan.FromMinutes(30));
+            }
+
+            return apod;
+        }
+
+        private async Task<string?> SafeGetAsync(string url)
+        {
+            try
+            {
+                HttpResponseMessage response =
+                    await _httpClient.GetAsync(url);
+
+                if (response.StatusCode ==
+                    System.Net.HttpStatusCode.TooManyRequests)
+                {
+                    return null;
+                }
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return null;
+                }
+
+                return await response.Content.ReadAsStringAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
     }

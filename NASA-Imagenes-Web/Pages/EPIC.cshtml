@@ -1,10 +1,23 @@
-﻿@page
+﻿ @page
 @model EPICModel
 
 @{
     ViewData["Title"] = "Imagenes EPIC (Tierra)";
 }
 
+@if (Model.EpicImages == null || !Model.EpicImages.Any())
+{
+    <div class="alert alert-warning text-center">
+
+        🚨 No se pudieron cargar imágenes EPIC.
+        Puede que NASA esté limitando requests.
+
+    </div>
+
+    return;
+}
+
+@*
 <h2 class="text-center">Galeria de Imagenes EPIC (Tierra)</h2>
 
 @if (Model.EpicImages != null && Model.EpicImages.Any())
@@ -38,4 +51,108 @@
 else
 {
     <p>No hay imágenes disponibles en este momento.</p>
-}
+} *@
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-5 display-5 fw-bold text-light">
+        🌍 EPIC Earth Gallery
+    </h1>
+
+    <div id="epicCarousel"
+         class="carousel slide carousel-fade"
+         data-bs-ride="carousel"
+         data-bs-interval="5000">
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+
+            @for (int i = 0; i < Model.EpicImages.Count; i++)
+            {
+                <button type="button"
+                        data-bs-target="#epicCarousel"
+                        data-bs-slide-to="@i"
+                        class="@(i == 0 ? "active" : "")">
+                </button>
+            }
+
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner rounded-4 shadow-lg">
+
+            @for (int i = 0; i < Model.EpicImages.Count; i++)
+            {
+                Models.EpicImageResponse image =
+                Model.EpicImages[i];
+
+                DateTime parsedDate =
+                DateTime.Parse(image.Date);
+
+                string date =
+                parsedDate.ToString("yyyy/MM/dd");
+
+                @* string imageUrl =
+                $"https://api.nasa.gov/EPIC/archive/natural/{date}/png/{image.Image}.png?api_key=T3IDda6E6wpf2TxTc1V0as9uazaRiVUMJMHFNJQu"; *@
+                
+                string imageUrl = $"/API/EPICImage?date={date}&image={image.Image}";
+
+                <div class="carousel-item @(i == 0 ? "active" : "")">
+
+                    <div class="position-relative">
+
+                        <img src="@imageUrl"
+                             class="d-block w-100 epic-image"
+                             alt="@image.Caption"
+                             loading="lazy" />
+
+                        <!-- Overlay -->
+                        <div class="epic-overlay">
+
+                            <h3 class="fw-bold">
+                                🌎 @image.Caption
+                            </h3>
+
+                            <p class="mb-3">
+                                📅 @parsedDate.ToString("dd/MM/yyyy HH:mm")
+                            </p>
+
+                            <a href="@imageUrl"
+                               target="_blank"
+                               class="btn btn-light btn-sm">
+
+                                🔍 Ver imagen completa
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#epicCarousel"
+                data-bs-slide="prev">
+
+            <span class="carousel-control-prev-icon"></span>
+
+        </button>
+
+        <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#epicCarousel"
+                data-bs-slide="next">
+
+            <span class="carousel-control-next-icon"></span>
+
+        </button>
+
+    </div>
+
+</div>
